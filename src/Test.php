@@ -2,13 +2,13 @@
 
 namespace Dartui\StraussPrefixError;
 
-use Mailgun\Mailgun;
+use Dartui\StraussPrefixError\Dependencies\Mailgun\Mailgun;
 
 class Test
 {
     public function __construct()
     {
         $this->mailgun = Mailgun::create();
-        $this->title = 'Mailgun';
+        $this->title = 'Dartui\StraussPrefixError\Dependencies\Mailgun';
     }
 }
