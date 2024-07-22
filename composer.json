@@ -1,0 +1,43 @@
+{
+    "name": "dartui/strauss-prefix-error",
+    "type": "library",
+    "require": {
+        "mailgun/mailgun-php": "^4.2",
+        "nyholm/psr7": "^1.8"
+    },
+    "require-dev": {
+        "brianhenryie/strauss": "^0.19.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dartui\\StraussPrefixError\\": "src/"
+        },
+        "classmap": [
+            "dependencies/"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "extra": {
+        "strauss": {
+            "namespace_prefix": "Dartui\\StraussPrefixError\\Dependencies\\",
+            "target_directory": "dependencies",
+            "classmap_prefix": "Dartui_StraussPrefixError_Dependencies_"
+        }
+    },
+    "scripts": {
+        "prefix-namespaces-dev": [
+            "strauss",
+            "composer dump-autoload"
+        ],
+        "post-install-cmd": [
+            "@prefix-namespaces-dev"
+        ],
+        "post-update-cmd": [
+            "@prefix-namespaces-dev"
+        ]
+    }
+}
